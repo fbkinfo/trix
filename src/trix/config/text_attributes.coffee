@@ -18,6 +18,11 @@ Trix.config.textAttributes =
       matchingSelector = "a:not(#{attachmentSelector})"
       if link = Trix.findClosestElementFromNode(element, {matchingSelector})
         link.getAttribute("href")
+  title:
+    groupTagName: "abbr"
+    parser: (element) ->
+      if hint = Trix.findClosestElementFromNode(element, matchingSelector: "abbr")
+        hint.getAttribute("title")
   strike:
     tagName: "del"
     inheritable: true

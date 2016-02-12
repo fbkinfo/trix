@@ -81,10 +81,10 @@ class Trix.Piece extends Trix.Object
   # Grouping
 
   canBeGrouped: ->
-    @hasAttribute("href")
+    @hasAttribute("href") or @hasAttribute("title")
 
   canBeGroupedWith: (piece) ->
-    @getAttribute("href") is piece.getAttribute("href")
+    @getAttribute("href") is piece.getAttribute("href") or @getAttribute("title") is piece.getAttribute("title")
 
   # Splittable
 

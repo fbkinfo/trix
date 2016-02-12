@@ -235,8 +235,8 @@ class Trix.Composition extends Trix.BasicObject
     return unless selectedRange = @getSelectedRange()
     [startPosition, endPosition] = selectedRange
     if startPosition is endPosition
-      if attributeName is "href"
-        text = Trix.Text.textForStringWithAttributes(value, href: value)
+      if attributeName is "href" or attributeName is "title"
+        text = Trix.Text.textForStringWithAttributes(value, "#{attributeName}": value)
         @insertText(text)
     else
       @setDocument(@document.addAttributeAtRange(attributeName, value, selectedRange))
@@ -383,6 +383,8 @@ class Trix.Composition extends Trix.BasicObject
   expandSelectionForEditing: ->
     if @hasCurrentAttribute("href")
       @expandSelectionAroundCommonAttribute("href")
+    if @hasCurrentAttribute("title")
+      @expandSelectionAroundCommonAttribute("title")
 
   expandSelectionAroundCommonAttribute: (attributeName) ->
     position = @getPosition()

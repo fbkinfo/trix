@@ -278,6 +278,8 @@ class Trix.EditorController extends Trix.Controller
       perform: -> @editor.redo()
     link:
       test: -> @editor.canActivateAttribute("href")
+    hint:
+      test: -> @editor.canActivateAttribute("title")
     increaseBlockLevel:
       test: -> @editor.canIncreaseIndentationLevel()
       perform: -> @editor.increaseIndentationLevel() and @render()
