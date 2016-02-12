@@ -1,5 +1,5 @@
 <%
-def svgo_data_uri(path, precision: 0)
+def svgo_data_uri(path, precision: 1)
   svgo = "node_modules/.bin/svgo"
 
   if File.exists?(svgo)
@@ -13,16 +13,17 @@ end
 %>
 
 trix-toolbar .button_group button {
-  &.bold::before { background-image: url(<%= svgo_data_uri('trix/images/bold.svg', precision: 1) %>); }
-  &.italic::before { background-image: url(<%= svgo_data_uri('trix/images/italic.svg', precision: 1) %>); }
-  &.link::before { background-image: url(<%= svgo_data_uri('trix/images/link.svg', precision: 2) %>); }
-  &.strike::before { background-image: url(<%= svgo_data_uri('trix/images/strike.svg', precision: 2) %>); }
-  &.quote::before { background-image: url(<%= svgo_data_uri('trix/images/quote.svg', precision: 0) %>); }
-  &.code::before { background-image: url(<%= svgo_data_uri('trix/images/code.svg', precision: 1) %>); }
-  &.bullets::before { background-image: url(<%= svgo_data_uri('trix/images/bullets.svg', precision: 0) %>); }
-  &.numbers::before { background-image: url(<%= svgo_data_uri('trix/images/numbers.svg', precision: 1) %>); }
-  &.block-level.decrease::before { background-image: url(<%= svgo_data_uri('trix/images/block_level_decrease.svg', precision: 1) %>); }
-  &.block-level.increase::before { background-image: url(<%= svgo_data_uri('trix/images/block_level_increase.svg', precision: 1) %>); }
-  &.undo::before { background-image: url(<%= svgo_data_uri('trix/images/undo.svg', precision: 1) %>); }
-  &.redo::before { background-image: url(<%= svgo_data_uri('trix/images/redo.svg', precision: 1) %>); }
+  &.bold::before { background-image: url(<%= svgo_data_uri('trix/images/bold.svg') %>); }
+  &.italic::before { background-image: url(<%= svgo_data_uri('trix/images/italic.svg') %>); }
+  &.link::before { background-image: url(<%= svgo_data_uri('trix/images/link.svg') %>); }
+  &.hint::before { background-image: url(<%= svgo_data_uri('trix/images/hint.svg') %>); }
+  &.strike::before { background-image: url(<%= svgo_data_uri('trix/images/strike.svg') %>); }
+  &.quote::before { background-image: url(<%= svgo_data_uri('trix/images/quote.svg') %>); }
+  &.code::before { background-image: url(<%= svgo_data_uri('trix/images/code.svg') %>); }
+  &.bullets::before { background-image: url(<%= svgo_data_uri('trix/images/bullets.svg') %>); }
+  &.numbers::before { background-image: url(<%= svgo_data_uri('trix/images/numbers.svg') %>); }
+  &.block-level.decrease::before { background-image: url(<%= svgo_data_uri('trix/images/block_level_decrease.svg') %>); }
+  &.block-level.increase::before { background-image: url(<%= svgo_data_uri('trix/images/block_level_increase.svg') %>); }
+  &.undo::before { background-image: url(<%= svgo_data_uri('trix/images/undo.svg') %>); }
+  &.redo::before { background-image: url(<%= svgo_data_uri('trix/images/redo.svg') %>); }
 }
