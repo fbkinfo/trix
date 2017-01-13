@@ -46,7 +46,7 @@ class Trix.SelectionManager extends Trix.BasicObject
   lock: ->
     if @lockCount++ is 0
       @updateCurrentLocationRange()
-      @lockedLocationRange = @getLocationRange()
+      @lockedLocationRange = @getLocationRange(strict: false)
 
   unlock: ->
     if --@lockCount is 0
